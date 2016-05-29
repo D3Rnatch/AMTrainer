@@ -14,10 +14,16 @@ def dumpData(f1,f2,ind,str,fileid) :
 	global output_file_pattern
 	
 	# dump data to file
-	f2.write(fileid)
+	# f2.write(fileid)
+	# dts = output_file_pattern + "%d"%ind
+	# dt = "<s> "+str+" </s> ("+dts+")"
+	# f1.write(dt)
+	
 	dts = output_file_pattern + "%d"%ind
-	dt = "<s> "+str+" </s> ("+dts+")"
+	f2.write(dts + "\n")
+	dt = "<s> " + str + " </s> (" + dts + ")\n"
 	f1.write(dt)
+	
 
 def loadString() :
 	global max_value
@@ -85,3 +91,4 @@ if __name__ == "__main__" :
 			
 	transcript_file.close()
 	ids_file.close()
+	
